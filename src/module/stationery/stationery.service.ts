@@ -8,10 +8,16 @@ const createStationeryIntoDB = async (stationery: IStationery) => {
 }
 //Service function to find all stationery items from the database.
 const getAllStationeryFromDB = async () => {
-   const result = await Stationery.find()
+    const result = await Stationery.find()
+    return result
+}
+//Service function to find one stationery items by id from the database.
+const getSingleStationeryByIdFromDB = async (productId: string) => {
+    const result = await Stationery.findById(productId)
     return result
 }
 export const StationeryServices = {
     createStationeryIntoDB,
-    getAllStationeryFromDB
+    getAllStationeryFromDB,
+    getSingleStationeryByIdFromDB,
 }
