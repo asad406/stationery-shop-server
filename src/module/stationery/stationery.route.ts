@@ -8,5 +8,7 @@ stationeryRouter.get('/:productId', stationeryController.getSingleStationeryByID
 stationeryRouter.get('/', stationeryController.getAllStationery)
 // Route to create a new stationery item
 stationeryRouter.post('/', stationeryController.createStationery)
+// Route to create a new stationery item
+stationeryRouter.put('/:productId', stationeryController.updateStationeryByID)
 
 export default stationeryRouter

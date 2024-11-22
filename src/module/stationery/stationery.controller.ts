@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
 import { StationeryServices } from "./stationery.service";
 //Controller function to create a new stationery item.
-const createStationery = async (req:Request, res: Response) =>{
-    try{
+const createStationery = async (req: Request, res: Response) => {
+    try {
         const body = req.body
         const data = await StationeryServices.createStationeryIntoDB(body);
         res.send({
             message: "Stationery created successfully",
-            success : true,
+            success: true,
             data
         })
-    }catch{
+    } catch {
         res.send({
             success: false,
             message: "Something went wrong"
@@ -18,15 +18,15 @@ const createStationery = async (req:Request, res: Response) =>{
     }
 }
 //Controller function to get all stationery items.
-const getAllStationery = async (req:Request, res: Response) =>{
-    try{        
+const getAllStationery = async (req: Request, res: Response) => {
+    try {
         const data = await StationeryServices.getAllStationeryFromDB();
         res.send({
             message: "Get all Stationery successfully",
-            success : true,
+            success: true,
             data
         })
-    }catch(error){
+    } catch (error) {
         res.send({
             success: false,
             message: "Something went wrong",
@@ -35,16 +35,35 @@ const getAllStationery = async (req:Request, res: Response) =>{
     }
 }
 //Controller function to get single stationery items by id.
-const getSingleStationeryByID = async (req:Request, res: Response) =>{
-    try{    
+const getSingleStationeryByID = async (req: Request, res: Response) => {
+    try {
         const id = req.params.productId
         const data = await StationeryServices.getSingleStationeryByIdFromDB(id);
         res.send({
-            message: "Get Single Stationery product successfully",
-            success : true,
+            message: "Product retrieved successfully",
+            success: true,
             data
         })
-    }catch(error){
+    } catch (error) {
+        res.send({
+            success: false,
+            message: "Something went wrong",
+            error
+        })
+    }
+}
+//Controller function to update single stationery items by id.
+const updateStationeryByID = async (req: Request, res: Response) => {
+    try {
+        const id = req.params.productId
+        const body = req.body
+        const data = await StationeryServices.updateStationeryToDB(id, body);
+        res.send({
+            message: "Product updated successfully",
+            success: true,
+            data
+        })
+    } catch (error) {
         res.send({
             success: false,
             message: "Something went wrong",
@@ -56,5 +75,6 @@ const getSingleStationeryByID = async (req:Request, res: Response) =>{
 export const stationeryController = {
     createStationery,
     getAllStationery,
-    getSingleStationeryByID
+    getSingleStationeryByID,
+    updateStationeryByID,
 }
