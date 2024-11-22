@@ -6,5 +6,5 @@ app.use(express.json());
 app.use(cors())
 
 //Application Routes
-app.use('/api/v1/stationery', stationeryRouter)
+app.use('/api/products', stationeryRouter)
 export default app;
