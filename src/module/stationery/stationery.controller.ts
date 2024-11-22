@@ -18,6 +18,6 @@ const createStationery = async (req:Request, res: Response) =>{
     }
 }
 
-export const serviceController = {
+export const stationeryController = {
     createStationery
 }
