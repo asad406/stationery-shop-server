@@ -17,7 +17,24 @@ const createStationery = async (req:Request, res: Response) =>{
         })
     }
 }
+//Controller function to get all stationery items.
+const getAllStationery = async (req:Request, res: Response) =>{
+    try{        
+        const data = await StationeryServices.getAllStationeryFromDB();
+        res.send({
+            message: "Get all Stationery successfully",
+            success : true,
+            data
+        })
+    }catch{
+        res.send({
+            success: false,
+            message: "Something went wrong"
+        })
+    }
+}
 
 export const stationeryController = {
-    createStationery
+    createStationery,
+    getAllStationery
 }

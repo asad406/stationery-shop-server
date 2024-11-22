@@ -6,6 +6,12 @@ const createStationeryIntoDB = async (stationery: IStationery) => {
     const result = await data.save()
     return result
 }
+//Service function to find all stationery items from the database.
+const getAllStationeryFromDB = async () => {
+   const result = await Stationery.find()
+    return result
+}
 export const StationeryServices = {
-    createStationeryIntoDB
+    createStationeryIntoDB,
+    getAllStationeryFromDB
 }
