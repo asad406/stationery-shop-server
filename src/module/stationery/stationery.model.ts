@@ -16,7 +16,8 @@ const stationerySchema = new Schema({
     },
     category: {
         type: String,
-        required: true
+        required: true,
+        enum: ["Writing", "Office Supplies", "Art Supplies", "Educational", "Technology"]
     },
     description: {
         type: String,
