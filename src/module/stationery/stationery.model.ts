@@ -1,4 +1,5 @@
-import { Schema } from "mongoose";
+import { model, Schema } from "mongoose";
+import { IStationery } from "./stationery.interface";
 
 const stationerySchema = new Schema({
     name: {
@@ -35,4 +36,5 @@ const stationerySchema = new Schema({
     }
 )
 
-export default stationerySchema
+const Stationery = model<IStationery>('Stationery',stationerySchema)
+export default Stationery
