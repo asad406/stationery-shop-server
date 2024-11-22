@@ -37,5 +37,5 @@ const stationerySchema = new Schema({
     }
 )
 
-const Stationery = model<IStationery>('Stationery',stationerySchema)
+const Stationery = model<IStationery>('Stationery', stationerySchema)
 export default Stationery
