@@ -1,10 +1,10 @@
-import app from "./app"
-const port = 5000
+import app from './app';
+const port = 5000;
 
 async function server() {
-    app.listen(port, ()=> {
-        console.log('hello world');
-    })
+  app.listen(port, () => {
+    console.log('hello world');
+  });
 }
 
-server()
+server();
