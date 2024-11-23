@@ -18,7 +18,8 @@ const getSingleStationeryByIdFromDB = async (productId: string) => {
 }
 //Service function to update one stationery items by id to the database.
 const updateStationeryToDB = async (productId: string, payload: Partial<IStationery>) => {
-    const result = await Stationery.findByIdAndUpdate(productId, payload, {new:true})
+    const options = {new: true , runValidator: true}
+    const result = await Stationery.findByIdAndUpdate(productId, payload, options)
     return result
 }
 //Service function to delete one stationery items by id to the database.
