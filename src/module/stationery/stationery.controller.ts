@@ -71,10 +71,29 @@ const updateStationeryByID = async (req: Request, res: Response) => {
         })
     }
 }
+//Controller function to update single stationery items by id.
+const deleteStationeryByID = async (req: Request, res: Response) => {
+    try {
+        const id = req.params.productId
+        await StationeryServices.deleteStationeryFromDB(id);
+        res.send({
+            message: "Product deleted successfully",
+            success: true,
+            data : {}
+        })
+    } catch (error) {
+        res.send({
+            success: false,
+            message: "Something went wrong",
+            error
+        })
+    }
+}
 
 export const stationeryController = {
     createStationery,
     getAllStationery,
     getSingleStationeryByID,
     updateStationeryByID,
+    deleteStationeryByID
 }

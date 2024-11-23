@@ -21,9 +21,15 @@ const updateStationeryToDB = async (productId: string, payload: Partial<IStation
     const result = await Stationery.findByIdAndUpdate(productId, payload, {new:true})
     return result
 }
+//Service function to delete one stationery items by id to the database.
+const deleteStationeryFromDB = async (productId: string) => {
+    const result = await Stationery.findByIdAndDelete(productId)
+    return result
+}
 export const StationeryServices = {
     createStationeryIntoDB,
     getAllStationeryFromDB,
     getSingleStationeryByIdFromDB,
-    updateStationeryToDB
+    updateStationeryToDB,
+    deleteStationeryFromDB
 }
