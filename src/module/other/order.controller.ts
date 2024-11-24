@@ -17,7 +17,7 @@ const createOrder = async (req: Request, res: Response,) => {
         handleError(res, error)
     }
 }
-//Controller function to get all order.
+//Controller function to calculate revenue from all order.
 const totalRevenue = async (req: Request, res: Response,) => {
     try {
         const data = await OrderServices.calculateTotalRevenue();
