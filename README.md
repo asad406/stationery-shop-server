@@ -42,4 +42,4 @@ My Stationery Shop Server Application designed to manage and track stationery pr
 
 ## Backend Server 
 - In this project use Vercel as live server
-- [Live link][https://stationery-shop-two.vercel.app/api/products]
+- [Live link](https://stationery-shop-two.vercel.app/api/products)
