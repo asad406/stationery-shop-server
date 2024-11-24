@@ -8,7 +8,7 @@ My Stationery Shop Server Application designed to manage and track stationery pr
 - **Order Management**: Place order and automatically update product quantities and stock. Also calculate the total revenue from all order.
 - **Validation and Error Handling**: Ensure data validation using mongoose validation and feedback suitable Error
 
-## Installation instruction
+## Used Technology and Installation instruction
 - [Node.js](https://nodejs.org/download/package-manager/.) (Download Node.js)
 - Express (```npm i express```)
 - MongoDB (```npm i mongodb```)

@@ -18,9 +18,9 @@ const createOrder = async (req: Request, res: Response,) => {
     }
 }
 //Controller function to get all order.
-const getAllOrder = async (req: Request, res: Response,) => {
+const totalRevenue = async (req: Request, res: Response,) => {
     try {
-        const data = await OrderServices.getAllOrderFromDB();
+        const data = await OrderServices.calculateTotalRevenue();
         if (!data) {
             res.status(404).send({
                 message: "Product not found",
@@ -28,7 +28,7 @@ const getAllOrder = async (req: Request, res: Response,) => {
             })
         } else {
             res.send({
-                message: "Get all successfully",
+                message: "Revenue calculated successfully",
                 success: true,
                 data
             })
@@ -58,5 +58,5 @@ const handleError = (res: Response, error: any) => {
 };
 export const OrderController = {
     createOrder,
-    getAllOrder
+    totalRevenue
 }
