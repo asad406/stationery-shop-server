@@ -8,7 +8,7 @@ const createStationeryIntoDB = async (stationery: IStationery) => {
     return result
 }
 //Service function to find search stationery items from the database.
-const getAllStationeryFromDB = async (searchTerm:any) => {
+const getAllStationeryFromDB = async (searchTerm: any) => {
     const result = await Stationery.find(searchTerm)
     return result
 }

@@ -13,29 +13,29 @@ const createStationery = async (req: Request, res: Response) => {
             data
         })
     } catch (error) {
-        handleError(res, error);       
+        handleError(res, error);
     }
 }
-//Controller function to get search stationery items.
+//Controller function to get search stationery items by query.
 const getAllStationery = async (req: Request, res: Response) => {
     try {
         const queryData = req.query
         const data = await StationeryServices.getAllStationeryFromDB(queryData);
-        if(data.length === 0){
+        if (data.length === 0) {
             res.status(404).send({
                 message: "Product not found",
                 success: false
             })
-        }else{
+        } else {
             res.send({
                 message: "Get all Stationery successfully",
                 success: true,
                 data
             })
         }
-        
+
     } catch (error) {
-        handleError(res, error);   
+        handleError(res, error);
     }
 }
 //Controller function to get single stationery items by id.
@@ -43,7 +43,7 @@ const getSingleStationeryByID = async (req: Request, res: Response) => {
     try {
         const id = req.params.productId
         const data = await StationeryServices.getSingleStationeryByIdFromDB(id);
-        if(!data){
+        if (!data) {
             res.status(404).send({
                 message: "Product not found",
                 success: false
@@ -55,7 +55,7 @@ const getSingleStationeryByID = async (req: Request, res: Response) => {
             data
         })
     } catch (error) {
-        handleError(res, error);   
+        handleError(res, error);
     }
 }
 //Controller function to update single stationery items by id.
@@ -63,7 +63,6 @@ const updateStationeryByID = async (req: Request, res: Response) => {
     try {
         const id = req.params.productId
         const body = req.body
-        // const options = {new: true, runValidators: true}
         const data = await StationeryServices.updateStationeryToDB(id, body);
         res.send({
             message: "Product updated successfully",
@@ -71,7 +70,7 @@ const updateStationeryByID = async (req: Request, res: Response) => {
             data
         })
     } catch (error) {
-        handleError(res, error);   
+        handleError(res, error);
     }
 }
 //Controller function to update single stationery items by id.
@@ -85,24 +84,24 @@ const deleteStationeryByID = async (req: Request, res: Response) => {
             data: {}
         })
     } catch (error) {
-        handleError(res, error);   
+        handleError(res, error);
     }
 }
 //Error handling function
 const handleError = (res: Response, error: any) => {
     if (error instanceof mongoose.Error.ValidationError) {
-        res.status(400).json({ 
-            message: 'Validation failed', 
-            success: false, 
+        res.status(400).json({
+            message: 'Validation failed',
+            success: false,
             error,
-            stack: error.stack 
-            });
+            stack: error.stack
+        });
     } else {
         res.status(500).json({
             message: 'Something went wrong',
             success: false,
             error,
-            stack: error.stack 
+            stack: error.stack
         });
     }
 };
