@@ -20,11 +20,19 @@ const createStationery = async (req: Request, res: Response) => {
 const getAllStationery = async (req: Request, res: Response) => {
     try {
         const data = await StationeryServices.getAllStationeryFromDB();
-        res.send({
-            message: "Get all Stationery successfully",
-            success: true,
-            data
-        })
+        if(data.length === 0){
+            res.status(404).send({
+                message: "Product not found",
+                success: false
+            })
+        }else{
+            res.send({
+                message: "Get all Stationery successfully",
+                success: true,
+                data
+            })
+        }
+        
     } catch (error) {
         handleError(res, error);   
     }
@@ -34,6 +42,12 @@ const getSingleStationeryByID = async (req: Request, res: Response) => {
     try {
         const id = req.params.productId
         const data = await StationeryServices.getSingleStationeryByIdFromDB(id);
+        if(!data){
+            res.status(404).send({
+                message: "Product not found",
+                success: false
+            })
+        }
         res.send({
             message: "Product retrieved successfully",
             success: true,

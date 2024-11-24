@@ -6,7 +6,13 @@ const createOrderIntoDB = async (order:IOrder) =>{
     const result = await data.save()
     return result
 }
+const getAllOrderFromDB = async () =>{
+   
+    const result = await Order.find()
+    return result
+}
 
 export const OrderServices = {
-    createOrderIntoDB
+    createOrderIntoDB,
+    getAllOrderFromDB
 }

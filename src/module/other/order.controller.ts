@@ -1,20 +1,41 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {  Request, Response } from "express";
+import { Request, Response } from "express";
 import { OrderServices } from "./order.service";
 import mongoose from "mongoose";
 
 //Controller function to create a new order.
-const createOrder = async (req: Request, res: Response, ) => {
-    try {        
-        const body = req.body     
+const createOrder = async (req: Request, res: Response,) => {
+    try {
+        const body = req.body
         const data = await OrderServices.createOrderIntoDB(body);
         res.send({
             message: "Order created successfully",
-            status: true,
+            success: true,
             data
         })
     } catch (error) {
-        handleError(res, error)        
+        handleError(res, error)
+    }
+}
+//Controller function to get all order.
+const getAllOrder = async (req: Request, res: Response,) => {
+    try {
+        const data = await OrderServices.getAllOrderFromDB();
+        if (!data) {
+            res.status(404).send({
+                message: "Product not found",
+                success: false
+            })
+        } else {
+            res.send({
+                message: "Get all successfully",
+                success: true,
+                data
+            })
+        }
+
+    } catch (error) {
+        handleError(res, error)
     }
 }
 //Error handling function
@@ -36,5 +57,6 @@ const handleError = (res: Response, error: any) => {
     }
 };
 export const OrderController = {
-    createOrder
+    createOrder,
+    getAllOrder
 }

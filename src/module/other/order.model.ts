@@ -6,7 +6,8 @@ const orderSchema = new Schema({
     email: {
         type: String,
         required: [true, 'Email is required'],
-        unique: [true, 'An Email can not use twice']
+        unique: [true, 'An Email can not use twice'],
+        match: [/.+@.+\..+/, 'Invalid email address']
     },
     product: {
         type: String,
