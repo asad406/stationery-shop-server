@@ -22,12 +22,12 @@ Some development dependencies
 - Prettier (```npm i -D --exact prettier```)
 
 ## Instruction to run the Project
-To nun this project in command line enter
+- To nun this project in command line enter
 ```ts-node-dev --respawn --transpile-only src/server.ts```
-To build the project
+- To build the project
 ```tsc```
-To find error by lint
+- To find error by lint
 ```npx eslint . ```
-To format the project
+- To format the project
 ```prettier . --write```
 
