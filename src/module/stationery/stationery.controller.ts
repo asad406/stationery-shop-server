@@ -16,10 +16,11 @@ const createStationery = async (req: Request, res: Response) => {
         handleError(res, error);       
     }
 }
-//Controller function to get all stationery items.
+//Controller function to get search stationery items.
 const getAllStationery = async (req: Request, res: Response) => {
     try {
-        const data = await StationeryServices.getAllStationeryFromDB();
+        const queryData = req.query
+        const data = await StationeryServices.getAllStationeryFromDB(queryData);
         if(data.length === 0){
             res.status(404).send({
                 message: "Product not found",

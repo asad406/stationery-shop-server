@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Elegant Eraser",
+    "brand": "Acme Corp",
+    "price": 1.99,
+    "category": "Office Supplies",
+    "description": "A high-quality eraser perfect for all your erasing needs.",
+    "quantity": 50,
+    "inStock": true
+  },
+  {
+    "name": "Advanced Notebook",
+    "brand": "Papyrus Inc",
+    "price": 4.99,
+    "category": "Educational",
+    "description": "A notebook with 200 pages, ideal for students and professionals.",
+    "quantity": 30,
+    "inStock": true
+  },
+  {
+    "name": "Stylish Pen",
+    "brand": "Writer's Delight",
+    "price": 2.49,
+    "category": "Writing",
+    "description": "A sleek pen that writes smoothly and comes in various colors.",
+    "quantity": 100,
+    "inStock": true
+  },
+  {
+    "name": "Colorful Markers",
+    "brand": "Rainbow Supplies",
+    "price": 3.99,
+    "category": "Art Supplies",
+    "description": "A set of 12 colorful markers perfect for art and craft projects.",
+    "quantity": 20,
+    "inStock": false
+  },
+  {
+    "name": "Durable Pencil",
+    "brand": "Graphite Goods",
+    "price": 0.99,
+    "category": "Writing",
+    "description": "A durable pencil that lasts longer and provides excellent grip.",
+    "quantity": 150,
+    "inStock": true
+  },
+  {
+    "name": "Wireless Mouse",
+    "brand": "Tech Innovations",
+    "price": 15.99,
+    "category": "Technology",
+    "description": "A high-precision wireless mouse, ideal for office and home use.",
+    "quantity": 75,
+    "inStock": true
+  },
+  {
+    "name": "Bluetooth Keyboard",
+    "brand": "Gadget Pro",
+    "price": 29.99,
+    "category": "Technology",
+    "description": "A slim and portable Bluetooth keyboard, compatible with multiple devices.",
+    "quantity": 50,
+    "inStock": true
+  },
+  {
+    "name": "Sticky Notes",
+    "brand": "Memo Masters",
+    "price": 2.49,
+    "category": "Office Supplies",
+    "description": "A pack of 100 sticky notes for quick reminders and notes.",
+    "quantity": 200,
+    "inStock": true
+  },
+  {
+    "name": "Graphing Calculator",
+    "brand": "CalcTech",
+    "price": 49.99,
+    "category": "Educational",
+    "description": "A powerful graphing calculator for students and professionals.",
+    "quantity": 25,
+    "inStock": true
+  },
+  {
+    "name": "Watercolor Paint Set",
+    "brand": "Artistry",
+    "price": 12.99,
+    "category": "Art Supplies",
+    "description": "A set of 24 vibrant watercolor paints for artists of all levels.",
+    "quantity": 30,
+    "inStock": true
+  }
+]
